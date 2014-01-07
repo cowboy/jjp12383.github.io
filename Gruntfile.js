@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           base: '.',
           clone: 'build',
         },
-        src: ['**/*'],
+        src: ['**/*', '!.*', '!**/.*'],
       },
     }
   });
@@ -19,6 +19,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['deploy']);
 
   // Load plugins.
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-gh-pages');
 
 };
